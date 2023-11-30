@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iTeacher Interactive Cultural Calendar</title>
+<style>
+  body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: rgb(174, 197, 129); }
+  .calendar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; max-width: 860px; margin: 40px auto; background: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+  .day { width: 100px; height: 100px; background: #eaeaea; padding: 50px; border-radius: 4px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+  .day:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+  .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
+  .modal-content { background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 50%; border-radius: 4px; }
+  .close { color: #333; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+  .close:hover { color: #000; }
+  .date-icon { width: 200px; height: 200px; position: absolute; top: 0px; right: 0px; background-size: cover; }
+  .button {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px; /* 添加间距以分隔每个按钮 */
+  background-color: #eaeaea; /* 背景框颜色 */
+  border-radius: 4px;
+  text-align: center; /* 文本居中 */
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+  .button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center; color: #333; font-size: 40px;">iTeacher Interactive Cultural Calendar</h2>
+<div class="calendar">
+  <!-- Days in month (repeat this block for each day) -->
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('1.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: Let\'s learn some Chinese important events!', [{ link: 'https://blog.languagelizard.com/2012/01/23/chinese-new-year-lessons-to-help-children-appreciate-cultural-and-linguistic-diversity/', text: 'Chinese New Year' }, { link: 'https://ich.unesco.org/en/RL/dragon-boat-festival-00225', text: 'Dragon Boat Festival' }, { link: 'https://www.cbc.ca/kids/articles/what-is-qingming-festival', text: 'Qingming Festival' }, { link: 'https://www.chinahighlights.com/festivals/winter-solstice.htm', text: 'Winter Solstice (Dongzhi) Festival' }])">
+    <div class="date-icon" style="background-image: url('2.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('3.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('4.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('5.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('6.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('7.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('8.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('9.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('10.png');"></div>
+    1
+  </div>
+
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('11.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('12.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('13.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('14.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('15.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('16.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('17.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('18.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('19.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('20.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('21.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Teaching resources: this country\'s events', [])">
+    <div class="date-icon" style="background-image: url('22.png');"></div>
+    1
+  </div>
+  <div class="day" onclick="openModal('Updating...', [])">
+    <div class="date-icon" style="background-image: url('23.jpg');"></div>
+    1
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p id="modalText">Information for Day</p>
+    <div id="buttonContainer"></div>
+  </div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Function to open the modal
+function openModal(info, buttons) {
+  document.getElementById("modalText").innerHTML = info;
+  
+  // 获取按钮容器
+  var buttonContainer = document.getElementById("buttonContainer");
+  
+  // 清空按钮容器，以便在每次打开modal时都重新生成按钮
+  buttonContainer.innerHTML = "";
+  
+  // 遍历按钮信息数组并生成按钮
+  for (var i = 0; i < buttons.length; i++) {
+    var buttonInfo = buttons[i];
+    var buttonDiv = document.createElement("div"); // 创建一个div元素
+    var button = document.createElement("a");
+    button.href = buttonInfo.link;
+    button.textContent = buttonInfo.text;
+    button.target = "_blank";
+    button.classList.add("button"); // 添加按钮悬停样式类
+    buttonDiv.appendChild(button); // 将按钮添加到div元素中
+    buttonContainer.appendChild(buttonDiv); // 将div元素添加到按钮容器中
+  }
+  
+  modal.style.display = "block";
+}
+
+
+// Function to close the modal
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Close the modal if the user clicks anywhere outside of the modal
+window.onclick = function(event) {
+  if (event.target == modal) {
+    closeModal();
+  }
+}
+</script>
+
+</body>
+</html>
